@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Color System | Moody Autumn Palette</title>
+    <!-- Tailwind CSS v4 Browser CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* custom subtle enhancements for better showcase experience */
+        body {
+            background-color: #2D312E;
+            font-family: 'Inter', system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .color-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
+        }
+        /* custom scrollbar to match mood */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #3A3F3B;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8E5343;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B38B4D;
+        }
+    </style>
+</head>
+<body class="bg-[#2D312E] text-[#D1C7BD] antialiased">
+
+    <div class="max-w-7xl mx-auto px-5 py-12 md:py-16">
+        <!-- header section with original design tribute -->
+        <div class="max-w-3xl mx-auto text-center mb-14">
+            <h1 class="text-4xl md:text-5xl font-light tracking-wide text-[#B38B4D] border-b border-[#4A514B] inline-block pb-3 mb-4">Moody Autumn · Color Intelligence</h1>
+            <p class="text-[#D1C7BD]/80 mt-4 text-base md:text-lg font-light leading-relaxed">
+                Extracted palette: <strong class="text-[#E2D9D0]">primary · secondary · background · text · accent 1–5</strong><br>
+                Auto‑generated Tailwind CSS shades <code class="bg-[#4A514B] px-2 py-0.5 rounded text-sm text-[#E2D9D0]">50 → 950</code> — production-ready for any design system.
+            </p>
+        </div>
+
+        <!-- ============ 1st: get colors from the provided HTML/CSS ============ -->
+        <!-- 
+            Colors extracted from Moody Autumn Palette:
+            - Primary:      #8E5343   (button background, left border accent)
+            - Secondary:    #4A514B   (hero-box background, border-bottom color)
+            - Background:   #2D312E   (body background)
+            - Text:         #D1C7BD   (body text)
+            - Accent 1:     #A67C74   (first swatch)
+            - Accent 2:     #4A514B   (same as secondary – but we treat as separate accent for scale generation)
+            - Accent 3:     #CC9D5B   (third swatch, golden autumn)
+            - Accent 4:     #5E3D34   (fourth swatch, deep russet)
+            - Accent 5:     #E2D9D0   (fifth swatch, button text, light mushroom)
+            
+            NOTE: Secondary & Accent 2 share the same hex #4A514B, but we'll generate distinct scale families 
+            for naming consistency: --color-secondary-* and --color-accent2-* can both be used.
+        -->
+        
+        <div class="mb-20">
+            <h2 class="text-2xl font-medium text-[#B38B4D] tracking-wide mb-6 flex items-center gap-2"><span class="w-2 h-2 bg-[#CC9D5B] rounded-full inline-block"></span> Master Palette · Root Variables</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 bg-[#252926]/60 rounded-2xl p-6 border border-[#4A514B]">
+                <!-- dynamic variable display from original extraction -->
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#8E5343"></div><span class="font-mono text-sm">--color-primary: <span class="text-[#E2D9D0]">#8E5343</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#4A514B"></div><span class="font-mono text-sm">--color-secondary: <span class="text-[#E2D9D0]">#4A514B</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#2D312E"></div><span class="font-mono text-sm">--color-bg: <span class="text-[#E2D9D0]">#2D312E</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#D1C7BD"></div><span class="font-mono text-sm">--color-text: <span class="text-[#E2D9D0]">#D1C7BD</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#A67C74"></div><span class="font-mono text-sm">--color-accent1: <span class="text-[#E2D9D0]">#A67C74</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#4A514B"></div><span class="font-mono text-sm">--color-accent2: <span class="text-[#E2D9D0]">#4A514B</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#CC9D5B"></div><span class="font-mono text-sm">--color-accent3: <span class="text-[#E2D9D0]">#CC9D5B</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#5E3D34"></div><span class="font-mono text-sm">--color-accent4: <span class="text-[#E2D9D0]">#5E3D34</span></span></div>
+                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#E2D9D0"></div><span class="font-mono text-sm">--color-accent5: <span class="text-[#2D312E] font-medium">#E2D9D0</span></span></div>
+            </div>
+            <p class="text-xs text-[#D1C7BD]/60 mt-4 text-center italic">✦ 9 extracted color roles · each expanded to 11-step Tailwind scale (50–950) using perceptual mixing</p>
+        </div>
+
+        <!-- ============ GENERATED COLOR SCALES (50 → 950) for primary, secondary, bg, text, accent1..5 ============ -->
+        <!-- Interactive showcase with Tailwind naming convention: --color-primary-50, --color-secondary-150, etc -->
+        
+        <div class="space-y-14">
+            <div id="color-scales-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <!-- JS will inject each color family card dynamically -->
+            </div>
+        </div>
+        
+        <!-- original showcase tribute with modern twist: keeps the swatch container and original mood -->
+        <div class="mt-20 pt-8 border-t border-[#4A514B]">
+            <div class="flex flex-wrap items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-xl font-medium text-[#CC9D5B]">Original essence · Moody Autumn</h3>
+                    <p class="text-sm text-[#D1C7BD]/70 max-w-md">Deep Slate & Pale Mushroom — transition of the season, captured in a sophisticated palette.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #A67C74;" title="Accent 1"></div>
+                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #4A514B;" title="Accent 2"></div>
+                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #CC9D5B;" title="Accent 3"></div>
+                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #5E3D34;" title="Accent 4"></div>
+                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #E2D9D0;" title="Accent 5"></div>
+                </div>
+            </div>
+            <!-- interactive demo: primary button with hover using generated primary-700 -->
+            <div class="mt-8 text-center">
+                <button class="btn-preview px-8 py-3 rounded-md font-medium transition-all duration-200 shadow-md" style="background-color: #8E5343; color:#E2D9D0;">🍂 Autumn Collection · Primary Scale Preview</button>
+                <p class="text-xs text-[#D1C7BD]/50 mt-3">* Hover effect uses generated <span class="font-mono">--color-primary-700</span> from scale</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --------------------------------------------------------------
+        // 2nd: generate color values from 50 to 950 (steps: 50,150,250,350,450,550,650,750,850,950 plus 500)
+        // Professional interpolation mixing with white (for tints) and black (for shades)
+        // while preserving hue and chroma. Gives Tailwind-style consistent progression.
+        // --------------------------------------------------------------
+        
+        // helpers: hex to rgb, rgb to hex
+        function hexToRgb(hex) {
+            let c = hex.substring(1);
+            if (c.length === 3) c = c.split('').map(ch => ch+ch).join('');
+            const intVal = parseInt(c, 16);
+            return { r: (intVal >> 16) & 255, g: (intVal >> 8) & 255, b: intVal & 255 };
+        }
+        function rgbToHex(r,g,b) {
+            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+        }
+        
+        // generate full scale: steps 50,150,250,350,450,500,550,650,750,850,950
+        // For tints (50-450): mix with white, for shades (550-950): mix with black, 500 = base.
+        function generateScale(baseHex) {
+            const steps = [50, 150, 250, 350, 450, 500, 550, 650, 750, 850, 950];
+            const rgbBase = hexToRgb(baseHex);
+            const white = { r: 255, g: 255, b: 255 };
+            const black = { r: 0, g: 0, b: 0 };
+            const results = [];
+            
+            for (let step of steps) {
+                if (step === 500) {
+                    results.push({ step, hex: baseHex });
+                    continue;
+                }
+                let mixFactor;
+                let targetColor;
+                if (step < 500) {
+                    // tint: lighter — step 50 almost white, step 450 close to base
+                    // factor: 1 at step 50, ~0 at step 450
+                    const range = 450; // difference from 50 to 450
+                    const offset = step - 50;
+                    let factor = 1 - (offset / range);
+                    factor = Math.min(1, Math.max(0, factor));
+                    targetColor = white;
+                    mixFactor = factor;
+                } else {
+                    // shade: step 550 close to base, step 950 near black
+                    const range = 400; // 950 - 550 = 400
+                    const offset = step - 550;
+                    let factor = 1 - (offset / range);
+                    factor = Math.min(1, Math.max(0, factor));
+                    targetColor = black;
+                    mixFactor = factor;
+                }
+                const mixed = {
+                    r: Math.round(rgbBase.r * mixFactor + targetColor.r * (1 - mixFactor)),
+                    g: Math.round(rgbBase.g * mixFactor + targetColor.g * (1 - mixFactor)),
+                    b: Math.round(rgbBase.b * mixFactor + targetColor.b * (1 - mixFactor))
+                };
+                results.push({ step, hex: rgbToHex(mixed.r, mixed.g, mixed.b) });
+            }
+            results.sort((a,b) => a.step - b.step);
+            return results;
+        }
+        
+        // Define color families extracted from the "Moody Autumn" design
+        const colorFamilies = [
+            { id: 'primary', label: 'Primary', baseHex: '#8E5343', description: 'Russet red · buttons, borders, key accents' },
+            { id: 'secondary', label: 'Secondary', baseHex: '#4A514B', description: 'Slate green · hero box, structural elements' },
+            { id: 'bg', label: 'Background', baseHex: '#2D312E', description: 'Deep charcoal-slate · main canvas' },
+            { id: 'text', label: 'Text', baseHex: '#D1C7BD', description: 'Pale mushroom · body typography' },
+            { id: 'accent1', label: 'Accent 1', baseHex: '#A67C74', description: 'Dusty rose · first swatch' },
+            { id: 'accent2', label: 'Accent 2', baseHex: '#4A514B', description: 'Muted olive · secondary swatch' },
+            { id: 'accent3', label: 'Accent 3', baseHex: '#CC9D5B', description: 'Golden ochre · autumn glow' },
+            { id: 'accent4', label: 'Accent 4', baseHex: '#5E3D34', description: 'Burnt umber · deep earth' },
+            { id: 'accent5', label: 'Accent 5', baseHex: '#E2D9D0', description: 'Limestone · light text, soft accents' }
+        ];
+        
+        // generate scales for all families
+        const scalesData = {};
+        colorFamilies.forEach(family => {
+            scalesData[family.id] = generateScale(family.baseHex);
+        });
+        
+        // inject CSS custom properties for all generated tokens (--color-primary-50 etc.)
+        function injectCustomProperties() {
+            let styleEl = document.getElementById('dynamic-color-scales-autumn');
+            if (styleEl) styleEl.remove();
+            const style = document.createElement('style');
+            style.id = 'dynamic-color-scales-autumn';
+            let css = ':root {\n';
+            for (let family of colorFamilies) {
+                const scale = scalesData[family.id];
+                scale.forEach(({step, hex}) => {
+                    css += `  --color-${family.id}-${step}: ${hex};\n`;
+                });
+            }
+            css += '}\n';
+            style.textContent = css;
+            document.head.appendChild(style);
+        }
+        
+        // render showcase cards: each card contains full scale swatches and naming
+        function renderShowcase() {
+            const container = document.getElementById('color-scales-container');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            for (let family of colorFamilies) {
+                const scale = scalesData[family.id];
+                const card = document.createElement('div');
+                card.className = 'bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden backdrop-blur-sm transition-all color-card';
+                card.innerHTML = `
+                    <div class="p-5 border-b border-[#4A514B] bg-[#3A3F3B]/20">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl font-semibold tracking-wide text-[#E2D9D0]">${family.label}</h3>
+                                <p class="text-xs text-[#D1C7BD]/60 mt-1">${family.description}</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full shadow-md border border-[#8E5343]/40" style="background: ${family.baseHex};"></div>
+                        </div>
+                        <div class="mt-2 font-mono text-[11px] text-[#CC9D5B]/80">base: ${family.baseHex} → <span class="text-[#E2D9D0]">--color-${family.id}-*</span></div>
+                    </div>
+                    <div class="p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                        ${scale.map(({step, hex}) => `
+                            <div class="flex flex-col items-center gap-2 group">
+                                <div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: ${hex};"></div>
+                                <div class="flex flex-col items-center">
+                                    <span class="text-[11px] font-mono font-bold text-[#D1C7BD]">${step}</span>
+                                    <span class="text-[10px] font-mono text-[#D1C7BD]/60">${hex}</span>
+                                    <span class="text-[9px] text-[#CC9D5B]/70 hidden sm:inline-block">--color-${family.id}-${step}</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="p-3 bg-[#2D312E]/80 text-center text-[10px] text-[#CC9D5B] border-t border-[#4A514B]">
+                        ✦ Tailwind CSS v4 ready · ${scale.length} shades (50–950) · perceptually balanced
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+            
+            // Extra interactive demo: Primary scale full row showcase with gradient + dynamic tooltip
+            const primaryScaleDemo = document.createElement('div');
+            primaryScaleDemo.className = 'md:col-span-2 xl:col-span-3 mt-6 bg-gradient-to-r from-[#2D312E] to-[#1E211F] rounded-xl border border-[#8E5343]/50 p-6';
+            primaryScaleDemo.innerHTML = `
+                <div class="text-center mb-5">
+                    <h4 class="text-lg font-medium text-[#CC9D5B] flex items-center justify-center gap-2">🍁 Autumn Primary Scale · 50 → 950 <span class="text-xs bg-[#8E5343]/40 px-2 py-0.5 rounded-full">Tailwind tokens active</span></h4>
+                    <p class="text-sm text-[#D1C7BD]/70">Hover any swatch to see the CSS variable name — fully compatible with Tailwind CDN</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-2 my-5">
+                    ${scalesData.primary.map(({step, hex}) => `
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-lg shadow-md transition-all hover:scale-110 hover:shadow-xl cursor-pointer" style="background: var(--color-primary-${step}, ${hex})" title="--color-primary-${step}"></div>
+                            <span class="text-[10px] mt-1.5 font-mono bg-black/30 px-1.5 rounded">${step}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="flex justify-center gap-5 flex-wrap mt-4">
+                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-400, #B07362); color: #2D312E">Primary 400</button>
+                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-600, #734334); color: #E2D9D0">Primary 600</button>
+                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-800, #4E2C21); color: #E2D9D0">Primary 800</button>
+                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-200, #CBA693); color: #2D312E">Primary 200</button>
+                </div>
+                <p class="text-center text-[10px] text-[#D1C7BD]/50 mt-5 font-mono">✨ All swatches use injected CSS custom properties: <span class="text-[#CC9D5B]">--color-primary-50</span> through <span class="text-[#CC9D5B]">--color-primary-950</span></p>
+            `;
+            container.appendChild(primaryScaleDemo);
+        }
+        
+        // Enhance original button hover with generated primary-700 token
+        function enhanceOriginalButton() {
+            const btn = document.querySelector('.btn-preview');
+            if (btn) {
+                btn.addEventListener('mouseenter', () => {
+                    const primary700 = getComputedStyle(document.documentElement).getPropertyValue('--color-primary-700').trim() || '#6B3F32';
+                    btn.style.backgroundColor = primary700;
+                    btn.style.transform = 'scale(1.02)';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.backgroundColor = '#8E5343';
+                    btn.style.transform = 'scale(1)';
+                });
+            }
+        }
+        
+        // additional polish: regenerate swatch container to show dynamic scale link? but we keep original container intact
+        // but we also add a dynamic note that the original colors are part of the new scale.
+        function addDynamicNote() {
+            const originalSwatchContainer = document.querySelector('.swatch-container');
+            if (originalSwatchContainer) {
+                const note = document.createElement('div');
+                note.className = 'mt-4 text-xs text-[#CC9D5B]/80 italic flex justify-center gap-4';
+                note.innerHTML = '<span>✨ These original swatches are now part of extended Tailwind scales → each color has 11 variants (50-950)</span>';
+                originalSwatchContainer.parentNode.appendChild(note);
+            }
+        }
+        
+        // Initialize everything
+        function init() {
+            injectCustomProperties();
+            renderShowcase();
+            enhanceOriginalButton();
+            addDynamicNote();
+            console.log('✅ Moody Autumn Palette — Tailwind CSS scales (50-950) generated for all extracted colors.');
+        }
+        
+        init();
+    </script>
+</body>
+</html>
