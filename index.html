@@ -3,15 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Color System | Moody Autumn Palette</title>
+    <title>Moody Autumn | Complete Color System</title>
     <!-- Tailwind CSS v4 Browser CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        /* custom subtle enhancements for better showcase experience */
-        body {
-            background-color: #2D312E;
-            font-family: 'Inter', system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* injected CSS variables will go here dynamically */
+        :root {
+            /* Primary Scale */
+            --color-primary-50: #8E5343;
+            --color-primary-100: #474A1F;
+            --color-primary-200: #5B5427;
+            --color-primary-300: #6D5730;
+            --color-primary-400: #7D563A;
+            --color-primary-500: #8E5343;
+            --color-primary-600: #9E5D5B;
+            --color-primary-700: #AE737D;
+            --color-primary-800: #BE8C9D;
+            --color-primary-900: #CDA5BA;
+            --color-primary-950: #DBBED3;
+            --color-primary-1000: #EAD8E8;
+
+            /* Secondary Scale */
+            --color-secondary-50: #4A514B;
+            --color-secondary-100: #252929;
+            --color-secondary-200: #2E3332;
+            --color-secondary-300: #373D3B;
+            --color-secondary-400: #414743;
+            --color-secondary-500: #4A514B;
+            --color-secondary-600: #626862;
+            --color-secondary-700: #7B807A;
+            --color-secondary-800: #949792;
+            --color-secondary-900: #ADAEAA;
+            --color-secondary-950: #C5C5C3;
+            --color-secondary-1000: #DCDCDB;
+
+            /* Background Scale */
+            --color-bg-50: #2D312E;
+            --color-bg-100: #161819;
+            --color-bg-200: #1C1F1E;
+            --color-bg-300: #222524;
+            --color-bg-400: #272B29;
+            --color-bg-500: #2D312E;
+            --color-bg-600: #494D49;
+            --color-bg-700: #656865;
+            --color-bg-800: #828481;
+            --color-bg-900: #9E9F9D;
+            --color-bg-950: #BABAB9;
+            --color-bg-1000: #D6D6D5;
+
+            /* Text Scale */
+            --color-text-50: #D1C7BD;
+            --color-text-100: #65695E;
+            --color-text-200: #818376;
+            --color-text-300: #9D9C8D;
+            --color-text-400: #B7B2A5;
+            --color-text-500: #D1C7BD;
+            --color-text-600: #D7CBC6;
+            --color-text-700: #DED0CE;
+            --color-text-800: #E4D7D8;
+            --color-text-900: #EAE0E2;
+            --color-text-950: #F0E8EC;
+            --color-text-1000: #F6F1F4;
+
+            /* Accent 1 Scale */
+            --color-accent1-50: #A67C74;
+            --color-accent1-100: #555538;
+            --color-accent1-200: #696247;
+            --color-accent1-300: #7E6D56;
+            --color-accent1-400: #927665;
+            --color-accent1-500: #A67C74;
+            --color-accent1-600: #B38687;
+            --color-accent1-700: #BF98A0;
+            --color-accent1-800: #CBAAB7;
+            --color-accent1-900: #D7BDCC;
+            --color-accent1-950: #E3CFDE;
+            --color-accent1-1000: #EEE2EE;
+
+            /* Accent 2 Scale */
+            --color-accent2-50: #4A514B;
+            --color-accent2-100: #252929;
+            --color-accent2-200: #2E3332;
+            --color-accent2-300: #373D3B;
+            --color-accent2-400: #414743;
+            --color-accent2-500: #4A514B;
+            --color-accent2-600: #626862;
+            --color-accent2-700: #7B807A;
+            --color-accent2-800: #949792;
+            --color-accent2-900: #ADAEAA;
+            --color-accent2-950: #C5C5C3;
+            --color-accent2-1000: #DCDCDB;
+
+            /* Accent 3 Scale */
+            --color-accent3-50: #CC9D5B;
+            --color-accent3-100: #4E6A2A;
+            --color-accent3-200: #728335;
+            --color-accent3-300: #9B9C41;
+            --color-accent3-400: #B49F4E;
+            --color-accent3-500: #CC9D5B;
+            --color-accent3-600: #D4986F;
+            --color-accent3-700: #DC9784;
+            --color-accent3-800: #E49B99;
+            --color-accent3-900: #EBAFB9;
+            --color-accent3-950: #F1C5D4;
+            --color-accent3-1000: #F7DCEA;
+
+            /* Accent 4 Scale */
+            --color-accent4-50: #5E3D34;
+            --color-accent4-100: #2F3119;
+            --color-accent4-200: #3C381F;
+            --color-accent4-300: #483B26;
+            --color-accent4-400: #533D2D;
+            --color-accent4-500: #5E3D34;
+            --color-accent4-600: #74504F;
+            --color-accent4-700: #8A696E;
+            --color-accent4-800: #A0848E;
+            --color-accent4-900: #B59FAB;
+            --color-accent4-950: #CBBAC6;
+            --color-accent4-1000: #E0D6DF;
+
+            /* Accent 5 Scale */
+            --color-accent5-50: #E2D9D0;
+            --color-accent5-100: #6E7267;
+            --color-accent5-200: #8C8E81;
+            --color-accent5-300: #AAA99C;
+            --color-accent5-400: #C6C1B6;
+            --color-accent5-500: #E2D9D0;
+            --color-accent5-600: #E6DBD6;
+            --color-accent5-700: #EADEDC;
+            --color-accent5-800: #EEE2E3;
+            --color-accent5-900: #F2E9EB;
+            --color-accent5-950: #F6EFF2;
+            --color-accent5-1000: #FAF5F8;
         }
+
+        /* custom styling for showcase */
+        body {
+            background-color: var(--color-bg-500);
+            font-family: 'Inter', system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--color-text-500);
+        }
+        
         .color-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -19,307 +150,253 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
         }
-        /* custom scrollbar to match mood */
+        
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #3A3F3B;
+            background: var(--color-secondary-400);
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #8E5343;
+            background: var(--color-primary-500);
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #B38B4D;
+            background: var(--color-accent3-500);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-accent3-500), var(--color-primary-400));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .token-badge {
+            background: var(--color-secondary-600);
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.7rem;
+            font-family: monospace;
+            color: var(--color-text-400);
         }
     </style>
 </head>
-<body class="bg-[#2D312E] text-[#D1C7BD] antialiased">
+<body class="antialiased">
 
     <div class="max-w-7xl mx-auto px-5 py-12 md:py-16">
-        <!-- header section with original design tribute -->
+        <!-- header section -->
         <div class="max-w-3xl mx-auto text-center mb-14">
-            <h1 class="text-4xl md:text-5xl font-light tracking-wide text-[#B38B4D] border-b border-[#4A514B] inline-block pb-3 mb-4">Moody Autumn · Color Intelligence</h1>
+            <h1 class="text-4xl md:text-5xl font-light tracking-wide mb-4">
+                <span class="gradient-text">Moody Autumn</span>
+                <span class="text-2xl block mt-2 text-[#D1C7BD]/70">Complete Color Intelligence System</span>
+            </h1>
             <p class="text-[#D1C7BD]/80 mt-4 text-base md:text-lg font-light leading-relaxed">
-                Extracted palette: <strong class="text-[#E2D9D0]">primary · secondary · background · text · accent 1–5</strong><br>
-                Auto‑generated Tailwind CSS shades <code class="bg-[#4A514B] px-2 py-0.5 rounded text-sm text-[#E2D9D0]">50 → 950</code> — production-ready for any design system.
+                A comprehensive color system with <strong class="text-[#E2D9D0]">9 families × 11 shades each</strong><br>
+                Fully integrated CSS custom properties — production-ready for Tailwind CSS
             </p>
         </div>
 
-        <!-- ============ 1st: get colors from the provided HTML/CSS ============ -->
-        <!-- 
-            Colors extracted from Moody Autumn Palette:
-            - Primary:      #8E5343   (button background, left border accent)
-            - Secondary:    #4A514B   (hero-box background, border-bottom color)
-            - Background:   #2D312E   (body background)
-            - Text:         #D1C7BD   (body text)
-            - Accent 1:     #A67C74   (first swatch)
-            - Accent 2:     #4A514B   (same as secondary – but we treat as separate accent for scale generation)
-            - Accent 3:     #CC9D5B   (third swatch, golden autumn)
-            - Accent 4:     #5E3D34   (fourth swatch, deep russet)
-            - Accent 5:     #E2D9D0   (fifth swatch, button text, light mushroom)
-            
-            NOTE: Secondary & Accent 2 share the same hex #4A514B, but we'll generate distinct scale families 
-            for naming consistency: --color-secondary-* and --color-accent2-* can both be used.
-        -->
-        
-        <div class="mb-20">
-            <h2 class="text-2xl font-medium text-[#B38B4D] tracking-wide mb-6 flex items-center gap-2"><span class="w-2 h-2 bg-[#CC9D5B] rounded-full inline-block"></span> Master Palette · Root Variables</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 bg-[#252926]/60 rounded-2xl p-6 border border-[#4A514B]">
-                <!-- dynamic variable display from original extraction -->
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#8E5343"></div><span class="font-mono text-sm">--color-primary: <span class="text-[#E2D9D0]">#8E5343</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#4A514B"></div><span class="font-mono text-sm">--color-secondary: <span class="text-[#E2D9D0]">#4A514B</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#2D312E"></div><span class="font-mono text-sm">--color-bg: <span class="text-[#E2D9D0]">#2D312E</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#D1C7BD"></div><span class="font-mono text-sm">--color-text: <span class="text-[#E2D9D0]">#D1C7BD</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#A67C74"></div><span class="font-mono text-sm">--color-accent1: <span class="text-[#E2D9D0]">#A67C74</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#4A514B"></div><span class="font-mono text-sm">--color-accent2: <span class="text-[#E2D9D0]">#4A514B</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#CC9D5B"></div><span class="font-mono text-sm">--color-accent3: <span class="text-[#E2D9D0]">#CC9D5B</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#5E3D34"></div><span class="font-mono text-sm">--color-accent4: <span class="text-[#E2D9D0]">#5E3D34</span></span></div>
-                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-md shadow-md" style="background:#E2D9D0"></div><span class="font-mono text-sm">--color-accent5: <span class="text-[#2D312E] font-medium">#E2D9D0</span></span></div>
+        <!-- Color Families Overview -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-medium text-[#CC9D5B] tracking-wide mb-6 flex items-center gap-2">
+                <span class="w-2 h-2 bg-[#CC9D5B] rounded-full inline-block"></span> 
+                Color Families · Complete Scale (50 → 1000)
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-[#252926]/40 rounded-xl p-4 text-center border border-[#4A514B]">
+                    <div class="w-full h-16 rounded-lg mb-2" style="background: var(--color-primary-500);"></div>
+                    <span class="text-sm font-medium">Primary</span>
+                    <span class="text-xs block text-[#D1C7BD]/60">#8E5343</span>
+                </div>
+                <div class="bg-[#252926]/40 rounded-xl p-4 text-center border border-[#4A514B]">
+                    <div class="w-full h-16 rounded-lg mb-2" style="background: var(--color-secondary-500);"></div>
+                    <span class="text-sm font-medium">Secondary</span>
+                    <span class="text-xs block text-[#D1C7BD]/60">#4A514B</span>
+                </div>
+                <div class="bg-[#252926]/40 rounded-xl p-4 text-center border border-[#4A514B]">
+                    <div class="w-full h-16 rounded-lg mb-2" style="background: var(--color-bg-500);"></div>
+                    <span class="text-sm font-medium">Background</span>
+                    <span class="text-xs block text-[#D1C7BD]/60">#2D312E</span>
+                </div>
+                <div class="bg-[#252926]/40 rounded-xl p-4 text-center border border-[#4A514B]">
+                    <div class="w-full h-16 rounded-lg mb-2" style="background: var(--color-text-500);"></div>
+                    <span class="text-sm font-medium">Text</span>
+                    <span class="text-xs block text-[#D1C7BD]/60">#D1C7BD</span>
+                </div>
+                <div class="bg-[#252926]/40 rounded-xl p-4 text-center border border-[#4A514B]">
+                    <div class="w-full h-16 rounded-lg mb-2" style="background: var(--color-accent3-500);"></div>
+                    <span class="text-sm font-medium">Accent 3</span>
+                    <span class="text-xs block text-[#D1C7BD]/60">#CC9D5B</span>
+                </div>
             </div>
-            <p class="text-xs text-[#D1C7BD]/60 mt-4 text-center italic">✦ 9 extracted color roles · each expanded to 11-step Tailwind scale (50–950) using perceptual mixing</p>
         </div>
 
-        <!-- ============ GENERATED COLOR SCALES (50 → 950) for primary, secondary, bg, text, accent1..5 ============ -->
-        <!-- Interactive showcase with Tailwind naming convention: --color-primary-50, --color-secondary-150, etc -->
-        
-        <div class="space-y-14">
-            <div id="color-scales-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                <!-- JS will inject each color family card dynamically -->
+        <!-- Dynamic Color Scales Container -->
+        <div id="color-scales-container" class="space-y-10">
+            <!-- Primary Family -->
+            <div class="color-card bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden">
+                <div class="p-5 border-b border-[#4A514B] bg-[#3A3F3B]/20">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-semibold tracking-wide text-[#E2D9D0]">Primary · Russet Red</h3>
+                            <p class="text-xs text-[#D1C7BD]/60 mt-1">Key accents, buttons, borders — warm earth foundation</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full shadow-md border border-[#8E5343]/40" style="background: var(--color-primary-500);"></div>
+                    </div>
+                    <div class="mt-2 font-mono text-[11px] text-[#CC9D5B]/80">base: #8E5343 → <span class="text-[#E2D9D0]">--color-primary-*</span></div>
+                </div>
+                <div class="p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-11 gap-3">
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-50);"></div><span class="text-[10px] font-mono">50</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-50</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-100);"></div><span class="text-[10px] font-mono">100</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-100</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-200);"></div><span class="text-[10px] font-mono">200</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-200</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-300);"></div><span class="text-[10px] font-mono">300</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-300</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-400);"></div><span class="text-[10px] font-mono">400</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-400</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-500);"></div><span class="text-[10px] font-mono font-bold text-[#CC9D5B]">500</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-500</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-600);"></div><span class="text-[10px] font-mono">600</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-600</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-700);"></div><span class="text-[10px] font-mono">700</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-700</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-800);"></div><span class="text-[10px] font-mono">800</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-800</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-900);"></div><span class="text-[10px] font-mono">900</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-900</span></div>
+                    <div class="flex flex-col items-center gap-2 group"><div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: var(--color-primary-950);"></div><span class="text-[10px] font-mono">950</span><span class="text-[9px] text-[#D1C7BD]/50 hidden md:inline">--color-primary-950</span></div>
+                </div>
+                <div class="p-3 bg-[#2D312E]/80 text-center text-[10px] text-[#CC9D5B] border-t border-[#4A514B]">✦ 11 shades (50–950) + 1000 available · Tailwind CSS ready</div>
+            </div>
+
+            <!-- Secondary Family -->
+            <div class="color-card bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden">
+                <div class="p-5 border-b border-[#4A514B] bg-[#3A3F3B]/20">
+                    <div class="flex justify-between items-center">
+                        <div><h3 class="text-xl font-semibold tracking-wide text-[#E2D9D0]">Secondary · Slate Green</h3><p class="text-xs text-[#D1C7BD]/60 mt-1">Structural elements, containers, muted accents</p></div>
+                        <div class="w-10 h-10 rounded-full shadow-md border border-[#4A514B]/40" style="background: var(--color-secondary-500);"></div>
+                    </div>
+                </div>
+                <div class="p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-11 gap-3">
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-50);"></div><span class="text-[10px] font-mono mt-1">50</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-100);"></div><span class="text-[10px] font-mono mt-1">100</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-200);"></div><span class="text-[10px] font-mono mt-1">200</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-300);"></div><span class="text-[10px] font-mono mt-1">300</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-400);"></div><span class="text-[10px] font-mono mt-1">400</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-500);"></div><span class="text-[10px] font-mono font-bold text-[#CC9D5B] mt-1">500</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-600);"></div><span class="text-[10px] font-mono mt-1">600</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-700);"></div><span class="text-[10px] font-mono mt-1">700</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-800);"></div><span class="text-[10px] font-mono mt-1">800</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-900);"></div><span class="text-[10px] font-mono mt-1">900</span></div>
+                    <div class="flex flex-col items-center"><div class="w-full h-20 rounded-lg shadow-md" style="background: var(--color-secondary-950);"></div><span class="text-[10px] font-mono mt-1">950</span></div>
+                </div>
+            </div>
+
+            <!-- Accent Families Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Accent 1 -->
+                <div class="color-card bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden">
+                    <div class="p-4 border-b border-[#4A514B]"><h3 class="font-semibold text-[#E2D9D0]">Accent 1 · Dusty Rose</h3><span class="text-xs text-[#D1C7BD]/60">#A67C74</span></div>
+                    <div class="p-3 grid grid-cols-6 gap-2">
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-50);"></div><span class="text-[9px]">50</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-100);"></div><span class="text-[9px]">100</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-200);"></div><span class="text-[9px]">200</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-300);"></div><span class="text-[9px]">300</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-400);"></div><span class="text-[9px]">400</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-500);"></div><span class="text-[9px] font-bold">500</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-600);"></div><span class="text-[9px]">600</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-700);"></div><span class="text-[9px]">700</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-800);"></div><span class="text-[9px]">800</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-900);"></div><span class="text-[9px]">900</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent1-950);"></div><span class="text-[9px]">950</span></div>
+                    </div>
+                </div>
+                <!-- Accent 2 -->
+                <div class="color-card bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden">
+                    <div class="p-4 border-b border-[#4A514B]"><h3 class="font-semibold text-[#E2D9D0]">Accent 2 · Muted Olive</h3><span class="text-xs text-[#D1C7BD]/60">#4A514B</span></div>
+                    <div class="p-3 grid grid-cols-6 gap-2">
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-50);"></div><span class="text-[9px]">50</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-100);"></div><span class="text-[9px]">100</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-200);"></div><span class="text-[9px]">200</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-300);"></div><span class="text-[9px]">300</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-400);"></div><span class="text-[9px]">400</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-500);"></div><span class="text-[9px] font-bold">500</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-600);"></div><span class="text-[9px]">600</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-700);"></div><span class="text-[9px]">700</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-800);"></div><span class="text-[9px]">800</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-900);"></div><span class="text-[9px]">900</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent2-950);"></div><span class="text-[9px]">950</span></div>
+                    </div>
+                </div>
+                <!-- Accent 3 -->
+                <div class="color-card bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden">
+                    <div class="p-4 border-b border-[#4A514B]"><h3 class="font-semibold text-[#E2D9D0]">Accent 3 · Golden Ochre</h3><span class="text-xs text-[#D1C7BD]/60">#CC9D5B</span></div>
+                    <div class="p-3 grid grid-cols-6 gap-2">
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-50);"></div><span class="text-[9px]">50</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-100);"></div><span class="text-[9px]">100</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-200);"></div><span class="text-[9px]">200</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-300);"></div><span class="text-[9px]">300</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-400);"></div><span class="text-[9px]">400</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-500);"></div><span class="text-[9px] font-bold">500</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-600);"></div><span class="text-[9px]">600</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-700);"></div><span class="text-[9px]">700</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-800);"></div><span class="text-[9px]">800</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-900);"></div><span class="text-[9px]">900</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent3-950);"></div><span class="text-[9px]">950</span></div>
+                    </div>
+                </div>
+                <!-- Accent 4 -->
+                <div class="color-card bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden">
+                    <div class="p-4 border-b border-[#4A514B]"><h3 class="font-semibold text-[#E2D9D0]">Accent 4 · Burnt Umber</h3><span class="text-xs text-[#D1C7BD]/60">#5E3D34</span></div>
+                    <div class="p-3 grid grid-cols-6 gap-2">
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-50);"></div><span class="text-[9px]">50</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-100);"></div><span class="text-[9px]">100</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-200);"></div><span class="text-[9px]">200</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-300);"></div><span class="text-[9px]">300</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-400);"></div><span class="text-[9px]">400</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-500);"></div><span class="text-[9px] font-bold">500</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-600);"></div><span class="text-[9px]">600</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-700);"></div><span class="text-[9px]">700</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-800);"></div><span class="text-[9px]">800</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-900);"></div><span class="text-[9px]">900</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent4-950);"></div><span class="text-[9px]">950</span></div>
+                    </div>
+                </div>
+                <!-- Accent 5 -->
+                <div class="color-card bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden lg:col-span-2">
+                    <div class="p-4 border-b border-[#4A514B]"><h3 class="font-semibold text-[#E2D9D0]">Accent 5 · Limestone</h3><span class="text-xs text-[#D1C7BD]/60">#E2D9D0 — Light text, soft backgrounds</span></div>
+                    <div class="p-3 grid grid-cols-6 sm:grid-cols-11 gap-2">
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-50);"></div><span class="text-[9px]">50</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-100);"></div><span class="text-[9px]">100</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-200);"></div><span class="text-[9px]">200</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-300);"></div><span class="text-[9px]">300</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-400);"></div><span class="text-[9px]">400</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-500);"></div><span class="text-[9px] font-bold">500</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-600);"></div><span class="text-[9px]">600</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-700);"></div><span class="text-[9px]">700</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-800);"></div><span class="text-[9px]">800</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-900);"></div><span class="text-[9px]">900</span></div>
+                        <div><div class="h-12 rounded" style="background: var(--color-accent5-950);"></div><span class="text-[9px]">950</span></div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- original showcase tribute with modern twist: keeps the swatch container and original mood -->
-        <div class="mt-20 pt-8 border-t border-[#4A514B]">
-            <div class="flex flex-wrap items-center justify-between gap-6">
-                <div>
-                    <h3 class="text-xl font-medium text-[#CC9D5B]">Original essence · Moody Autumn</h3>
-                    <p class="text-sm text-[#D1C7BD]/70 max-w-md">Deep Slate & Pale Mushroom — transition of the season, captured in a sophisticated palette.</p>
+
+        <!-- Interactive Demo Section -->
+        <div class="mt-16 pt-8 border-t border-[#4A514B]">
+            <div class="bg-gradient-to-r from-[#1E211F] to-[#2D312E] rounded-2xl p-8 border border-[#CC9D5B]/30">
+                <h3 class="text-2xl font-medium text-[#CC9D5B] text-center mb-6">Live Demo · Using CSS Variables</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <button class="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 shadow-lg" style="background: var(--color-primary-500); color: var(--color-accent5-500);">Primary 500</button>
+                    <button class="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 shadow-lg" style="background: var(--color-primary-700); color: var(--color-accent5-500);">Primary 700</button>
+                    <button class="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 shadow-lg" style="background: var(--color-accent3-500); color: var(--color-bg-500);">Accent 3 · Golden</button>
+                    <button class="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 shadow-lg" style="background: var(--color-accent4-600); color: var(--color-text-500);">Accent 4 · Umber</button>
+                    <div class="px-6 py-3 rounded-lg font-medium" style="background: var(--color-secondary-600); color: var(--color-accent5-500);">Secondary 600</div>
                 </div>
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #A67C74;" title="Accent 1"></div>
-                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #4A514B;" title="Accent 2"></div>
-                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #CC9D5B;" title="Accent 3"></div>
-                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #5E3D34;" title="Accent 4"></div>
-                    <div class="w-12 h-12 rounded-full shadow-lg" style="background: #E2D9D0;" title="Accent 5"></div>
-                </div>
+                <p class="text-center text-sm text-[#D1C7BD]/60 mt-8 font-mono">All colors are powered by CSS custom properties — ready for Tailwind CSS integration</p>
             </div>
-            <!-- interactive demo: primary button with hover using generated primary-700 -->
-            <div class="mt-8 text-center">
-                <button class="btn-preview px-8 py-3 rounded-md font-medium transition-all duration-200 shadow-md" style="background-color: #8E5343; color:#E2D9D0;">🍂 Autumn Collection · Primary Scale Preview</button>
-                <p class="text-xs text-[#D1C7BD]/50 mt-3">* Hover effect uses generated <span class="font-mono">--color-primary-700</span> from scale</p>
-            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="mt-12 text-center text-xs text-[#D1C7BD]/50 border-t border-[#4A514B] pt-8">
+            <p>Moody Autumn Color System · 9 families × 11 shades each (50–950) + extended 1000 values</p>
+            <p class="mt-1">CSS Custom Properties: <span class="font-mono">--color-primary-*, --color-secondary-*, --color-bg-*, --color-text-*, --color-accent1-* through --color-accent5-*</span></p>
         </div>
     </div>
-
-    <script>
-        // --------------------------------------------------------------
-        // 2nd: generate color values from 50 to 950 (steps: 50,150,250,350,450,550,650,750,850,950 plus 500)
-        // Professional interpolation mixing with white (for tints) and black (for shades)
-        // while preserving hue and chroma. Gives Tailwind-style consistent progression.
-        // --------------------------------------------------------------
-        
-        // helpers: hex to rgb, rgb to hex
-        function hexToRgb(hex) {
-            let c = hex.substring(1);
-            if (c.length === 3) c = c.split('').map(ch => ch+ch).join('');
-            const intVal = parseInt(c, 16);
-            return { r: (intVal >> 16) & 255, g: (intVal >> 8) & 255, b: intVal & 255 };
-        }
-        function rgbToHex(r,g,b) {
-            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-        }
-        
-        // generate full scale: steps 50,150,250,350,450,500,550,650,750,850,950
-        // For tints (50-450): mix with white, for shades (550-950): mix with black, 500 = base.
-        function generateScale(baseHex) {
-            const steps = [50, 150, 250, 350, 450, 500, 550, 650, 750, 850, 950];
-            const rgbBase = hexToRgb(baseHex);
-            const white = { r: 255, g: 255, b: 255 };
-            const black = { r: 0, g: 0, b: 0 };
-            const results = [];
-            
-            for (let step of steps) {
-                if (step === 500) {
-                    results.push({ step, hex: baseHex });
-                    continue;
-                }
-                let mixFactor;
-                let targetColor;
-                if (step < 500) {
-                    // tint: lighter — step 50 almost white, step 450 close to base
-                    // factor: 1 at step 50, ~0 at step 450
-                    const range = 450; // difference from 50 to 450
-                    const offset = step - 50;
-                    let factor = 1 - (offset / range);
-                    factor = Math.min(1, Math.max(0, factor));
-                    targetColor = white;
-                    mixFactor = factor;
-                } else {
-                    // shade: step 550 close to base, step 950 near black
-                    const range = 400; // 950 - 550 = 400
-                    const offset = step - 550;
-                    let factor = 1 - (offset / range);
-                    factor = Math.min(1, Math.max(0, factor));
-                    targetColor = black;
-                    mixFactor = factor;
-                }
-                const mixed = {
-                    r: Math.round(rgbBase.r * mixFactor + targetColor.r * (1 - mixFactor)),
-                    g: Math.round(rgbBase.g * mixFactor + targetColor.g * (1 - mixFactor)),
-                    b: Math.round(rgbBase.b * mixFactor + targetColor.b * (1 - mixFactor))
-                };
-                results.push({ step, hex: rgbToHex(mixed.r, mixed.g, mixed.b) });
-            }
-            results.sort((a,b) => a.step - b.step);
-            return results;
-        }
-        
-        // Define color families extracted from the "Moody Autumn" design
-        const colorFamilies = [
-            { id: 'primary', label: 'Primary', baseHex: '#8E5343', description: 'Russet red · buttons, borders, key accents' },
-            { id: 'secondary', label: 'Secondary', baseHex: '#4A514B', description: 'Slate green · hero box, structural elements' },
-            { id: 'bg', label: 'Background', baseHex: '#2D312E', description: 'Deep charcoal-slate · main canvas' },
-            { id: 'text', label: 'Text', baseHex: '#D1C7BD', description: 'Pale mushroom · body typography' },
-            { id: 'accent1', label: 'Accent 1', baseHex: '#A67C74', description: 'Dusty rose · first swatch' },
-            { id: 'accent2', label: 'Accent 2', baseHex: '#4A514B', description: 'Muted olive · secondary swatch' },
-            { id: 'accent3', label: 'Accent 3', baseHex: '#CC9D5B', description: 'Golden ochre · autumn glow' },
-            { id: 'accent4', label: 'Accent 4', baseHex: '#5E3D34', description: 'Burnt umber · deep earth' },
-            { id: 'accent5', label: 'Accent 5', baseHex: '#E2D9D0', description: 'Limestone · light text, soft accents' }
-        ];
-        
-        // generate scales for all families
-        const scalesData = {};
-        colorFamilies.forEach(family => {
-            scalesData[family.id] = generateScale(family.baseHex);
-        });
-        
-        // inject CSS custom properties for all generated tokens (--color-primary-50 etc.)
-        function injectCustomProperties() {
-            let styleEl = document.getElementById('dynamic-color-scales-autumn');
-            if (styleEl) styleEl.remove();
-            const style = document.createElement('style');
-            style.id = 'dynamic-color-scales-autumn';
-            let css = ':root {\n';
-            for (let family of colorFamilies) {
-                const scale = scalesData[family.id];
-                scale.forEach(({step, hex}) => {
-                    css += `  --color-${family.id}-${step}: ${hex};\n`;
-                });
-            }
-            css += '}\n';
-            style.textContent = css;
-            document.head.appendChild(style);
-        }
-        
-        // render showcase cards: each card contains full scale swatches and naming
-        function renderShowcase() {
-            const container = document.getElementById('color-scales-container');
-            if (!container) return;
-            container.innerHTML = '';
-            
-            for (let family of colorFamilies) {
-                const scale = scalesData[family.id];
-                const card = document.createElement('div');
-                card.className = 'bg-[#252926]/50 rounded-xl border border-[#4A514B] overflow-hidden backdrop-blur-sm transition-all color-card';
-                card.innerHTML = `
-                    <div class="p-5 border-b border-[#4A514B] bg-[#3A3F3B]/20">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <h3 class="text-xl font-semibold tracking-wide text-[#E2D9D0]">${family.label}</h3>
-                                <p class="text-xs text-[#D1C7BD]/60 mt-1">${family.description}</p>
-                            </div>
-                            <div class="w-10 h-10 rounded-full shadow-md border border-[#8E5343]/40" style="background: ${family.baseHex};"></div>
-                        </div>
-                        <div class="mt-2 font-mono text-[11px] text-[#CC9D5B]/80">base: ${family.baseHex} → <span class="text-[#E2D9D0]">--color-${family.id}-*</span></div>
-                    </div>
-                    <div class="p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                        ${scale.map(({step, hex}) => `
-                            <div class="flex flex-col items-center gap-2 group">
-                                <div class="w-full h-20 rounded-lg shadow-md transition-transform group-hover:scale-105 border border-white/10" style="background: ${hex};"></div>
-                                <div class="flex flex-col items-center">
-                                    <span class="text-[11px] font-mono font-bold text-[#D1C7BD]">${step}</span>
-                                    <span class="text-[10px] font-mono text-[#D1C7BD]/60">${hex}</span>
-                                    <span class="text-[9px] text-[#CC9D5B]/70 hidden sm:inline-block">--color-${family.id}-${step}</span>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                    <div class="p-3 bg-[#2D312E]/80 text-center text-[10px] text-[#CC9D5B] border-t border-[#4A514B]">
-                        ✦ Tailwind CSS v4 ready · ${scale.length} shades (50–950) · perceptually balanced
-                    </div>
-                `;
-                container.appendChild(card);
-            }
-            
-            // Extra interactive demo: Primary scale full row showcase with gradient + dynamic tooltip
-            const primaryScaleDemo = document.createElement('div');
-            primaryScaleDemo.className = 'md:col-span-2 xl:col-span-3 mt-6 bg-gradient-to-r from-[#2D312E] to-[#1E211F] rounded-xl border border-[#8E5343]/50 p-6';
-            primaryScaleDemo.innerHTML = `
-                <div class="text-center mb-5">
-                    <h4 class="text-lg font-medium text-[#CC9D5B] flex items-center justify-center gap-2">🍁 Autumn Primary Scale · 50 → 950 <span class="text-xs bg-[#8E5343]/40 px-2 py-0.5 rounded-full">Tailwind tokens active</span></h4>
-                    <p class="text-sm text-[#D1C7BD]/70">Hover any swatch to see the CSS variable name — fully compatible with Tailwind CDN</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-2 my-5">
-                    ${scalesData.primary.map(({step, hex}) => `
-                        <div class="flex flex-col items-center">
-                            <div class="w-14 h-14 rounded-lg shadow-md transition-all hover:scale-110 hover:shadow-xl cursor-pointer" style="background: var(--color-primary-${step}, ${hex})" title="--color-primary-${step}"></div>
-                            <span class="text-[10px] mt-1.5 font-mono bg-black/30 px-1.5 rounded">${step}</span>
-                        </div>
-                    `).join('')}
-                </div>
-                <div class="flex justify-center gap-5 flex-wrap mt-4">
-                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-400, #B07362); color: #2D312E">Primary 400</button>
-                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-600, #734334); color: #E2D9D0">Primary 600</button>
-                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-800, #4E2C21); color: #E2D9D0">Primary 800</button>
-                    <button class="px-4 py-2 rounded-md text-sm font-medium transition-all shadow hover:shadow-lg" style="background: var(--color-primary-200, #CBA693); color: #2D312E">Primary 200</button>
-                </div>
-                <p class="text-center text-[10px] text-[#D1C7BD]/50 mt-5 font-mono">✨ All swatches use injected CSS custom properties: <span class="text-[#CC9D5B]">--color-primary-50</span> through <span class="text-[#CC9D5B]">--color-primary-950</span></p>
-            `;
-            container.appendChild(primaryScaleDemo);
-        }
-        
-        // Enhance original button hover with generated primary-700 token
-        function enhanceOriginalButton() {
-            const btn = document.querySelector('.btn-preview');
-            if (btn) {
-                btn.addEventListener('mouseenter', () => {
-                    const primary700 = getComputedStyle(document.documentElement).getPropertyValue('--color-primary-700').trim() || '#6B3F32';
-                    btn.style.backgroundColor = primary700;
-                    btn.style.transform = 'scale(1.02)';
-                });
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.backgroundColor = '#8E5343';
-                    btn.style.transform = 'scale(1)';
-                });
-            }
-        }
-        
-        // additional polish: regenerate swatch container to show dynamic scale link? but we keep original container intact
-        // but we also add a dynamic note that the original colors are part of the new scale.
-        function addDynamicNote() {
-            const originalSwatchContainer = document.querySelector('.swatch-container');
-            if (originalSwatchContainer) {
-                const note = document.createElement('div');
-                note.className = 'mt-4 text-xs text-[#CC9D5B]/80 italic flex justify-center gap-4';
-                note.innerHTML = '<span>✨ These original swatches are now part of extended Tailwind scales → each color has 11 variants (50-950)</span>';
-                originalSwatchContainer.parentNode.appendChild(note);
-            }
-        }
-        
-        // Initialize everything
-        function init() {
-            injectCustomProperties();
-            renderShowcase();
-            enhanceOriginalButton();
-            addDynamicNote();
-            console.log('✅ Moody Autumn Palette — Tailwind CSS scales (50-950) generated for all extracted colors.');
-        }
-        
-        init();
-    </script>
 </body>
 </html>
